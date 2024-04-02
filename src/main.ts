@@ -23,17 +23,29 @@ renderer.render( scene, camera );
 // const geometry = THREE.TorusGeometry()
 
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
 // const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
+const material = new THREE.MeshStandardMaterial( { color: 0xff6347 } );
 
 const torus = new THREE.Mesh( geometry, material ); scene.add( torus );
 
+const pointLight = new THREE.PointLight(0xffffff, 500, 100);
+pointLight.position.set(5,10, 10);
+const ambientLight =  new THREE.AmbientLight(0xffffff);
+
+const lightHelper = new THREE.PointLightHelper(pointLight);
+
+scene.add(lightHelper);
+
+
+
+scene.add(pointLight);
+scene.add(ambientLight);
 scene.add(torus);
 
 function animate() {
     requestAnimationFrame( animate );
-    torus.rotation.x += 0.01;
-    torus.rotation.y += 0.05;
+    torus.rotation.x += 0.001;
+    torus.rotation.y += 0.005;
     renderer.render( scene, camera );
 }
 
