@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 
-const textTure = new THREE.TextureLoader().load("src/asset/thang.jpg");
+const textTure = new THREE.TextureLoader().load("/asset/thang.jpg");
 
 // MESH = geometry + material
 const geometry = new THREE.BoxGeometry(5, 3, 5, 100);

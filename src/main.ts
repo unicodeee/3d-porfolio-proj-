@@ -61,7 +61,7 @@ scene.add(me);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('src/asset/space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('/asset/space.jpg');
 scene.background = spaceTexture;
 // scene.background = new THREE.Color(0x7192f); // Hexadecimal value
 // or
@@ -69,8 +69,8 @@ scene.background = spaceTexture;
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('src/asset/mars-texture.jpg');
-const normalTexture = new THREE.TextureLoader().load('src/asset/normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('/asset/mars-texture.jpg');
+const normalTexture = new THREE.TextureLoader().load('/asset/normal.jpg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
