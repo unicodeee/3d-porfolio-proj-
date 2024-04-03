@@ -1,6 +1,6 @@
 import './style.css'
 import * as THREE from 'three';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+// import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 import {me} from './things/me-cube';
 
@@ -39,17 +39,18 @@ const ambientLight =  new THREE.AmbientLight(0xffffff);
 
 // Helper
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+//
+// const controls = new OrbitControls( camera, renderer.domElement );
+//
+// const size = 10;
+// const divisions = 10;
+//
+// const gridHelper = new THREE.GridHelper( size, divisions );
 
-const controls = new OrbitControls( camera, renderer.domElement );
 
-const size = 10;
-const divisions = 10;
-
-const gridHelper = new THREE.GridHelper( size, divisions );
-scene.add( gridHelper );
-
-scene.add(lightHelper);
+// scene.add( gridHelper );
+// scene.add(lightHelper);
 
 
 
@@ -87,7 +88,7 @@ moon.position.z = 30;
 moon.position.setX(-10);
 
 me.position.z = -5;
-me.position.x = 2;
+me.position.x = 20;
 
 function addStar() {
     const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -130,17 +131,10 @@ moveCamera();
 
 function animate() {
     requestAnimationFrame( animate );
-    controls.update();
+    // controls.update();
     torus.rotation.x += 0.001;
     torus.rotation.y += 0.005;
     renderer.render( scene, camera );
 }
 
 animate();
-
-
-
-
-
-
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
