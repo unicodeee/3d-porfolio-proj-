@@ -11,7 +11,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg'),
+    'canvas': document.querySelector('#bg')!, // Typescript also has a non-null assertion that you can use when you are sure that the value is never null by adding the ! operator to the end of your statement
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -62,8 +62,8 @@ scene.add(me);
 // Background
 
 const spaceTexture = new THREE.TextureLoader().load('src/asset/space.jpg');
-// scene.background = spaceTexture;
-scene.background = new THREE.Color(0x7192f); // Hexadecimal value
+scene.background = spaceTexture;
+// scene.background = new THREE.Color(0x7192f); // Hexadecimal value
 // or
 
 
@@ -95,7 +95,7 @@ function addStar() {
     const star = new THREE.Mesh(geometry, material);
 
     const [x, y, z] = Array(3)
-        .fill()
+        .fill(undefined)
         .map(() => THREE.MathUtils.randFloatSpread(100));
 
     star.position.set(x, y, z);
@@ -103,7 +103,7 @@ function addStar() {
 
 }
 
-Array(100).fill().forEach(addStar);
+Array(100).fill(undefined).forEach(addStar);
 
 
 
