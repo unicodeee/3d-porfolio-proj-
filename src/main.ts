@@ -14,10 +14,19 @@ const renderer = new THREE.WebGLRenderer({
     'canvas': document.querySelector('#bg')!, // Typescript also has a non-null assertion that you can use when you are sure that the value is never null by adding the ! operator to the end of your statement
 });
 
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 camera.position.setX(-3);
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 
 renderer.render(scene, camera);
 
@@ -113,12 +122,13 @@ Array(100).fill(undefined).forEach(addStar);
 
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
-    moon.rotation.x += 0.05;
-    moon.rotation.y += 0.075;
-    moon.rotation.z += 0.05;
-
-    me.rotation.y += 0.01;
-    me.rotation.z += 0.01;
+    if (!reducedMotion) {
+        moon.rotation.x += 0.05;
+        moon.rotation.y += 0.075;
+        moon.rotation.z += 0.05;
+        me.rotation.y += 0.01;
+        me.rotation.z += 0.01;
+    }
 
     camera.position.z = t * -0.05;
     camera.position.x = t * -0.0002;
@@ -132,8 +142,10 @@ moveCamera();
 function animate() {
     requestAnimationFrame( animate );
     // controls.update();
-    torus.rotation.x += 0.001;
-    torus.rotation.y += 0.005;
+    if (!reducedMotion) {
+        torus.rotation.x += 0.001;
+        torus.rotation.y += 0.005;
+    }
     renderer.render( scene, camera );
 }
 

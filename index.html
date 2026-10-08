@@ -2,128 +2,215 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <meta name="description" content="Quoc Thang Nguyen's software engineering portfolio: computer vision at Micron, a Rust ray tracer, interactive simulations, and full-stack applications." />
+    <meta name="theme-color" content="#07192f" />
+    <title>Quoc Thang Nguyen | Software Engineering Portfolio</title>
   </head>
-  <body style="background-color:#07192f;">
-
-    <canvas id="bg"></canvas>>
+  <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+    <canvas id="bg" aria-hidden="true"></canvas>
 
     <main>
-
-      <header>
-        <h1>Thang Nguyen</h1>
-        <p>🚀 Welcome to my website!</p>
+      <header class="hero">
+        <p class="eyebrow">Software engineering · San José State University</p>
+        <h1>Quoc Thang<br />Nguyen<span class="accent">.</span></h1>
+        <p class="hero-intro">I build software that sees, simulates, and solves real problems.</p>
+        <p class="hero-note">Computer vision at Micron. Full-stack applications. A ray tracer built from scratch.</p>
+        <div class="links">
+          <a class="button" href="/resume/Thang-Nguyen-Resume.pdf" target="_blank" rel="noopener noreferrer">View resume <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/unicodeee" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/thang-nguyen-612145177/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="mailto:quocthangn2000@gmail.com">Email <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav aria-label="Portfolio sections">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills &amp; education</a>
+        </nav>
       </header>
 
-
-      <blockquote>
-        <p>I like making stuff and putting it on the internet</p>
-      </blockquote>
-
-      <section>
-        <h2>📜 Manifesto</h2>
-        <p>
-          I thrive in dynamic environments where creativity, problem-solving, and teamwork come together to deliver exceptional software. My academic and professional journey has enabled me to hone my skills in full stack development, data management, and cloud deployment, and I am constantly seeking new opportunities to expand my expertise.
-        </p>
-
-        <p>
-          I am passionate about crafting efficient, scalable software solutions that bridge the gap between user needs and technical innovation. With a diverse background in software engineering, backend development, and academic tutoring, I strive to continuously challenge myself in solving real-world problems. I believe in the power of collaboration, lifelong learning, and leveraging technology to create meaningful impact.
-
-        </p>
-
+      <section id="about" class="about">
+        <p class="eyebrow">A little about me</p>
+        <h2>From images to ideas.</h2>
+        <p>I'm a software engineering student at San José State University, graduating in May 2027. I enjoy computer vision, graphics, and building useful applications from the ground up.</p>
+        <p>Most recently, I shipped an image-quality system for semiconductor inspection at Micron. Outside work, I'm learning Rust by building a ray tracer and exploring physics, web applications, and AI.</p>
       </section>
 
-      <section class="light">
-        <h2>👩🏽‍🚀 Projects</h2>
+      <section id="experience" class="experience left">
+        <p class="eyebrow">Experience</p>
+        <h2>Built. Shipped. Learned.</h2>
+        <article class="job featured-job">
+          <div class="company-heading">
+            <a class="company-logo" href="https://www.micron.com/" target="_blank" rel="noopener noreferrer" aria-label="Micron Technology website">
+              <img src="/asset/micron-logo.svg" width="288" height="62" alt="Micron Technology logo" />
+            </a>
+            <p class="meta">Boise, ID<br /><time datetime="2026-05">May 2026</time> – <time datetime="2026-08">Aug 2026</time></p>
+          </div>
+          <h3>Software Intern</h3>
+          <p class="job-team">Micron Technology · Advanced Packaging Technology Development</p>
+          <ul>
+            <li>Shipped a reusable <strong>Python, OpenCV, and NumPy</strong> image-quality system into Micron's semiconductor inspection workflow.</li>
+            <li>Automated focus and quality filtering with multi-metric sharpness analysis, segmentation, and calibrated thresholds, achieving <strong>92%+ accuracy</strong> on labeled inspection datasets.</li>
+            <li>Iterated through <strong>27 pipeline versions</strong>, using PCA, clustering, robust z-scores, geometric descriptors, and cross-dataset validation. Built galleries and engineering reports for review.</li>
+          </ul>
+          <p class="logo-credit">Logo: Micron Technology, Inc. · <a href="https://commons.wikimedia.org/wiki/File:Micron_Technology_logo_2024.svg" target="_blank" rel="noopener noreferrer">Source</a></p>
+        </article>
 
-        <h3>Particle Collision System</h3>
-        <h4>Physics Simulation | Verlet Integration, Sweep and Prune</h4>
-        <p>
-          Developed a particle collision simulator to explore and test calculus-based engineering physics concepts.
+        <article class="job">
+          <p class="meta">Oct 2023 – Feb 2024 · San Jose, CA</p>
+          <h3>Full Stack Developer</h3>
+          <p class="job-team">Powers Engineering and Inspection, Inc.</p>
+          <ul>
+            <li>Built an inspection management platform with <strong>SvelteKit, Node.js, PostgreSQL, and Prisma</strong> for onboarding, scheduling, and asset tracking.</li>
+            <li>Migrated <strong>50K+ records</strong> from MySQL to PostgreSQL with Flyway. Added hierarchical role-based access control and schema constraints.</li>
+          </ul>
+        </article>
 
-          Implemented particle movement using Verlet Integration and optimized collision detection through the Sweep and Prune algorithm.
-        </p>
+        <article class="job">
+          <p class="meta">Jun 2023 – Jul 2023 · San Jose, CA</p>
+          <h3>Machine Learning Engineer Intern</h3>
+          <p class="job-team">Powers Engineering and Inspection, Inc.</p>
+          <ul>
+            <li>Trained a TensorFlow/Keras CNN to classify industrial storage-tank images with <strong>70% accuracy</strong>.</li>
+            <li>Built a Flask backend with the Dropbox API, Redis workers, and cron jobs. Containerized it with Docker and deployed to AWS Elastic Beanstalk through Amazon ECR.</li>
+          </ul>
+        </article>
 
-        <h5>Live Demo:
-          <a href="https://particle-collision-simulation.vercel.app/" style="color:orange">Particle Collision Simulator!</a></h5>
+        <article class="job">
+          <p class="meta">Jun 2022 – Oct 2022 · San Jose, CA</p>
+          <h3>Backend Developer Intern</h3>
+          <p class="job-team">Covet Health</p>
+          <ul>
+            <li>Developed REST APIs and PostgreSQL-backed healthcare workflows with <strong>Spring Boot, Spring Data JPA, and Hibernate</strong>.</li>
+            <li>Used Docker for isolated testing and Bitbucket Pipelines for CI/CD to AWS Elastic Beanstalk.</li>
+          </ul>
+        </article>
 
-        <h3>Portfolio Website (this website)</h3>
-        <h4>Three.js-powered interactive portfolio</h4>
-        <p>
-
-          Designed and built a 3D portfolio website showcasing technical projects and skills, using Three.js for interactive web elements.
-
-          Live Demo: 3D Portfolio
-        </p>
-
-        <h5>Live Demo:
-          <a href="https://3d-porfolio-proj-iota.vercel.app/" style="color:orange">This 3D portfolio</a></h5>
-
-
-        <h2>🏆 Accomplishments</h2>
-
-        <p>
-          <h4>Certified Level I Tutor: Earned certification from CRLA’s International Tutor Training Program, providing academic tutoring in advanced mathematics and physics.</h4>
-
-        <h4>Successfully deployed several backend services using AWS, Docker, and PostgreSQL, improving efficiency in managing user data and automating file processing workflows.</h4>
-
-        <h4>Machine Learning: Developed and deployed a CNN model for automating image classification of industrial storage tanks, achieving 70% accuracy across 11 categories.</h4>
-        </p>
-
+        <article class="job">
+          <p class="meta">Feb 2022 – Mar 2024 · Santa Clara, CA</p>
+          <h3>Academic Tutor</h3>
+          <p class="job-team">Mission College</p>
+          <p>Tutored calculus, vector calculus, differential equations, and electricity and magnetism. CRLA Certified Level I Tutor.</p>
+        </article>
       </section>
 
-      <blockquote>
-        <p>The best way out is always through <br>-Robert Frost</p>
-      </blockquote>
+      <section id="projects" class="projects wide">
+        <p class="eyebrow">Selected projects</p>
+        <h2>Things I've been making.</h2>
 
-      <section class="left">
-        <h2>🌮 Work History</h2>
+        <article class="project raytracer">
+          <div class="project-heading">
+            <div>
+              <p class="project-status">In progress · 2026</p>
+              <h3>Rust Ray Tracer</h3>
+            </div>
+            <a href="https://github.com/unicodeee/rust-raytracing" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a>
+          </div>
+          <p>A 3D renderer built from scratch to learn Rust. From simple spheres to colored lights, Blinn–Phong shading, shadows, reflections, and glass refraction.</p>
+          <ul class="tags" aria-label="Ray tracer technologies"><li>Rust</li><li>Ray tracing</li><li>Blinn–Phong</li><li>Reflections</li><li>Refraction</li></ul>
+          <div class="render-gallery">
+            <figure>
+              <a href="/asset/raytracing/10-refraction-glass.png" target="_blank" rel="noopener noreferrer" aria-label="Open glass refraction render at full size">
+                <img src="/asset/raytracing/10-refraction-glass.png" alt="Glass-like colored spheres transmitting and refracting light over a reflective floor" width="1024" height="768" loading="lazy" decoding="async" />
+              </a>
+              <figcaption><span class="accent">Latest render</span> · Glass, transmission, and refraction.</figcaption>
+            </figure>
+            <figure>
+              <a href="/asset/raytracing/09-reflections.png" target="_blank" rel="noopener noreferrer" aria-label="Open reflective spheres render at full size">
+                <img src="/asset/raytracing/09-reflections.png" alt="Four colored spheres reflecting each other and their surroundings" width="1024" height="768" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Reflective surfaces. Rays bounce.</figcaption>
+            </figure>
+            <figure>
+              <a href="/asset/raytracing/08-colored-lights.png" target="_blank" rel="noopener noreferrer" aria-label="Open yellow and purple light render at full size">
+                <img src="/asset/raytracing/08-colored-lights.png" alt="Four glossy spheres with yellow and purple highlights and colored shadows" width="1024" height="768" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Yellow light. Purple light.</figcaption>
+            </figure>
+            <figure>
+              <a href="/asset/raytracing/07-shadows.png" target="_blank" rel="noopener noreferrer" aria-label="Open shaded spheres and shadows render at full size">
+                <img src="/asset/raytracing/07-shadows.png" alt="Red, green, blue, and yellow spheres casting shadows on a pale floor" width="1024" height="768" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Shading, highlights, and cast shadows.</figcaption>
+            </figure>
+          </div>
+          <details class="progression">
+            <summary>See how it started <span aria-hidden="true">+</span></summary>
+            <p>Real renders from the project's early commits.</p>
+            <div class="progression-grid">
+              <figure><img src="/asset/raytracing/01-ball.png" alt="First stage: one flat red sphere" width="1024" height="768" loading="lazy" /><figcaption>1. One ball.</figcaption></figure>
+              <figure><img src="/asset/raytracing/02-balls.png" alt="Second stage: three flat colored spheres" width="1024" height="768" loading="lazy" /><figcaption>2. More balls.</figcaption></figure>
+              <figure><img src="/asset/raytracing/03-plane.png" alt="Third stage: spheres above a flat red plane" width="1024" height="768" loading="lazy" /><figcaption>3. Add plane.</figcaption></figure>
+              <figure><img src="/asset/raytracing/04-lights.png" alt="Fourth stage: two lights illuminate the spheres" width="1024" height="768" loading="lazy" /><figcaption>4. Add lights.</figcaption></figure>
+              <figure><img src="/asset/raytracing/05-ambient.png" alt="Fifth stage: ambient light brightens the spheres" width="1024" height="768" loading="lazy" /><figcaption>5. Ambient shading.</figcaption></figure>
+              <figure><img src="/asset/raytracing/06-shading.png" alt="Sixth stage: Blinn-Phong shading adds highlights" width="1024" height="768" loading="lazy" /><figcaption>6. Make shiny.</figcaption></figure>
+            </div>
+          </details>
+        </article>
 
-
-
-
-        <div class="work-history">
-          <h3 class="work-title"># Academic Tutor</h3>
-          <p><strong>Mission College, Santa Clara, CA</strong><br>
-            02/2022 – 03/2024</p>
-          <p>Provided tutoring in <strong>Calculus 1 & 2</strong>, <strong>Vector Calculus</strong>, <strong>Differential Equations</strong>, and <strong>Physics 2</strong> (Electricity and Magnetism) to college students.</p>
-          <p><strong>Certified under the International Tutor Training Program</strong> by CRLA, offering expert guidance on complex academic subjects.</p>
-
-          <h3 class="work-title"># Full Stack Developer</h3>
-          <p><strong>Powers Engineering and Inspection, Inc., San Jose, CA</strong><br>
-            10/2023 – 02/2024</p>
-          <p>Developed a web platform allowing users to <strong>sign up</strong>, <strong>view inspection schedules</strong>, and <strong>manage assets</strong>, enhancing customer interaction.</p>
-          <p>Managed <strong>MySQL to PostgreSQL data migration</strong> and implemented a hierarchical user role system.</p>
-
-          <h3 class="work-title"># Backend Developer</h3>
-          <p><strong>Powers Engineering and Inspection, Inc., San Jose, CA</strong><br>
-            06/2023 – 07/2023</p>
-          <p>Created a backend service using <strong>Flask</strong> to manage file upload/download events via the <strong>Dropbox API</strong>.</p>
-          <p>Built a <strong>Redis-based worker system</strong> to automate image processing, improving file management efficiency by 30%.</p>
-          <p>Deployed the solution as a scalable API on <strong>AWS</strong> using <strong>Docker</strong>, <strong>Elastic Beanstalk</strong>, and <strong>Amazon ECR</strong>.</p>
-
-          <h3 class="work-title"># Backend Developer</h3>
-          <p><strong>Covet Health, San Jose, CA</strong><br>
-            09/2022 – 10/2022</p>
-          <p>Implemented <strong>CRUD API</strong> using <strong>Spring Data JPA</strong>, with <strong>PostgreSQL</strong> for data storage and <strong>Docker</strong> for local development.</p>
-          <p>Deployed the service on <strong>AWS</strong> using <strong>Bitbucket Pipelines</strong> and <strong>Elastic Beanstalk</strong> for seamless cloud integration.</p>
+        <div class="project-grid">
+          <article class="project">
+            <p class="project-status">Browser tools · 2026</p>
+            <h3>Tab Search</h3>
+            <p>A keyboard-first Edge and Chrome extension. Search open tabs by title or URL, navigate with arrow keys, and press Enter to switch.</p>
+            <ul class="tags" aria-label="Tab Search technologies"><li>JavaScript</li><li>Browser extension</li></ul>
+            <a href="https://github.com/unicodeee/tab-search-extension" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project">
+            <p class="project-status">AI &amp; simulation · 2026</p>
+            <h3>Autonomous Flight Safety Monitor</h3>
+            <p>A drone simulation dashboard that monitors telemetry and uses NVIDIA Nemotron to recommend safety interventions, with operator approval.</p>
+            <ul class="tags" aria-label="Flight monitor technologies"><li>Next.js</li><li>TypeScript</li><li>NVIDIA Nemotron</li></ul>
+            <a href="https://github.com/unicodeee/drone" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project">
+            <p class="project-status">Full-stack web</p>
+            <h3>ClaimIt</h3>
+            <p>A real-time campus lost-and-found platform. Students post, search, and claim items, with authentication, claim verification, and admin moderation.</p>
+            <ul class="tags" aria-label="ClaimIt technologies"><li>Next.js</li><li>Firebase</li><li>Firestore</li><li>Google Cloud Storage</li></ul>
+            <div class="links"><a href="https://claimit-ten.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a><a href="https://github.com/unicodeee/claimit" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project">
+            <p class="project-status">Physics &amp; simulation</p>
+            <h3>Particle Collision System</h3>
+            <p>A 2D physics simulation with Verlet Integration and Sweep-and-Prune collision detection. Built to explore engineering physics through code.</p>
+            <ul class="tags" aria-label="Particle simulation techniques"><li>Verlet Integration</li><li>Sweep-and-Prune</li></ul>
+            <div class="links"><a href="https://particle-collision-simulation.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a><a href="https://github.com/unicodeee/particle-collision-simulation" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project">
+            <p class="project-status">Graphics &amp; web</p>
+            <h3>This 3D Portfolio</h3>
+            <p>A Three.js-powered space scene with animated geometry and a camera that moves as you scroll. Built with TypeScript and Vite.</p>
+            <ul class="tags" aria-label="Portfolio technologies"><li>Three.js</li><li>TypeScript</li><li>Vite</li></ul>
+            <a href="https://github.com/unicodeee/3d-porfolio-proj-" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
-
-
       </section>
 
-      <blockquote>
-        <p>Thanks for visiting!</p>
-      </blockquote>
+      <section id="skills" class="skills left">
+        <p class="eyebrow">The toolkit</p>
+        <h2>Skills &amp; education.</h2>
+        <dl class="skill-list">
+          <div><dt>Languages</dt><dd>Python, Java, JavaScript, TypeScript, C, SQL, Rust</dd></div>
+          <div><dt>ML &amp; computer vision</dt><dd>OpenCV, NumPy, scikit-learn, TensorFlow, Keras, CNNs, PCA, clustering, image processing, feature engineering</dd></div>
+          <div><dt>Frameworks &amp; databases</dt><dd>React, Next.js, SvelteKit, Node.js, Flask, Spring Boot, Prisma, PostgreSQL, MySQL, Firebase</dd></div>
+          <div><dt>Tools &amp; cloud</dt><dd>Docker, Git, AWS, Redis, Linux, Flyway, Bitbucket Pipelines, CI/CD, Google Cloud Storage</dd></div>
+        </dl>
+        <div class="education">
+          <h3>San José State University</h3>
+          <p>B.S. Software Engineering<br /><span class="meta">Expected May 2027 · San Jose, CA</span></p>
+          <h3>Mission College</h3>
+          <p>A.A.S. Computer Information Systems · GPA 3.96<br />Liberal Arts: Natural Science &amp; Mathematics<br /><span class="meta">May 2024 · Santa Clara, CA</span></p>
+        </div>
+      </section>
 
-
+      <footer class="wide">
+        <h2>Thanks for orbiting by.</h2>
+        <a href="mailto:quocthangn2000@gmail.com">quocthangn2000@gmail.com <span aria-hidden="true">↗</span></a>
+        <p>Quoc Thang Nguyen · Built with Three.js.</p>
+      </footer>
     </main>
-
-
-
-    <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
