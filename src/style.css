@@ -79,6 +79,8 @@ nav a { color: var(--muted); text-decoration: none; }
 figure { margin: 0; min-width: 0; }
 figure img { width: 100%; border-radius: 6px; aspect-ratio: 4 / 3; object-fit: contain; background: #12121c; }
 figcaption { padding-top: 10px; font-size: 0.8rem; line-height: 1.5; color: var(--muted); }
+.project-preview { margin: 4px 0 20px; }
+.project-preview img { aspect-ratio: 16 / 9; border: 1px solid var(--border); }
 .progression { border-top: 1px solid var(--border); padding-top: 18px; }
 summary { cursor: pointer; color: var(--accent); font-size: 0.95rem; }
 summary span { float: right; }

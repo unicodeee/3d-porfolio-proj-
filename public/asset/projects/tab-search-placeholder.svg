@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#121c30"/>
+  <rect x="160" y="130" width="960" height="460" rx="24" fill="#192840" stroke="#64768f" stroke-width="3" stroke-dasharray="12 12"/>
+  <g fill="none" stroke="#ffad71" stroke-width="8"><circle cx="620" cy="285" r="42"/><path d="m650 315 42 42"/></g>
+  <g text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"><text x="640" y="430" fill="#f5f5f7" font-size="48" font-weight="700">Tab Search</text><text x="640" y="495" fill="#b5c1d3" font-size="30">Screenshot coming soon</text></g>
+</svg>
