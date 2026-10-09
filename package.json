@@ -15,5 +15,8 @@
   "dependencies": {
     "@types/three": "^0.163.0",
     "three": "^0.163.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
